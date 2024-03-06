@@ -115,10 +115,11 @@ footer p {
   .sub_container_one_left {
     padding-left: 7%;
   }
-    footer p {
-      margin-top: .9rem;
-      font-size: 12px;
-    }
+
+  footer p {
+    margin-top: .9rem;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 950px) {
@@ -165,6 +166,14 @@ footer p {
     margin-right: 1rem;
   }
 
+  header {
+    height: 50px;
+
+  }
+
+  .logo {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 450px) {
