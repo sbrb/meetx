@@ -30,12 +30,12 @@ function App() {
               </div>
             </div>
             <div className="sub_container_one_right">
-              <img src="https:/t.ly/UwjWh" alt="Your Image" />
+              <img src="./images/meetx.png" alt="meetx" />
             </div>
           </div>
           <div className="sub_container_one">
             <div className="sub_container_one_right">
-              <img src="https:/t.ly/UwjWh" alt="Your Image" />
+              <img src="./images/meetx.png" alt="meetx" />
             </div>
             <div className="sub_container_one_left">
               <div className="heading_container">
@@ -76,12 +76,12 @@ function App() {
               </div>
             </div>
             <div className="sub_container_one_right">
-              <img src="https:/t.ly/UwjWh" alt="Your Image" />
+              <img src="./images/meetx.png" alt="meetx" />
             </div>
           </div>
           <div className="sub_container_one">
             <div className="sub_container_one_right">
-              <img src="https:/t.ly/UwjWh" alt="Your Image" />
+              <img src="./images/meetx.png" alt="meetx" />
             </div>
             <div className="sub_container_one_left">
               <div className="heading_container">
