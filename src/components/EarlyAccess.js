@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from "react";
-import { FaEdit, FaTrash, FaTimes } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 
 function EarlyAccess() {
     const [showModal, setShowModal] = useState(false);
@@ -13,69 +13,69 @@ function EarlyAccess() {
         gender: "",
         country: "",
     });
-    const [employees, setEmployees] = useState([]);
-    const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
+    // const [employees, setEmployees] = useState([]);
+    // const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     fetchData();
+    // }, []);
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch(
-                "https://crudcrud.com/api/3b6744664e6148eb8655f85ad9942e0f/posts"
-            );
-            const data = await response.json();
-            setEmployees(data);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    };
+    // const fetchData = async () => {
+    //     try {
+    //         const response = await fetch(
+    //             "https://crudcrud.com/api/3b6744664e6148eb8655f85ad9942e0f/posts"
+    //         );
+    //         const data = await response.json();
+    //         setEmployees(data);
+    //     } catch (error) {
+    //         console.error("Error fetching data:", error);
+    //     }
+    // };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }));
-    };
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            let url =
-                "https://crudcrud.com/api/3b6744664e6148eb8655f85ad9942e0f/posts";
-            let method = "POST";
-            if (selectedEmployeeId) {
-                url += `/${selectedEmployeeId}`;
-                method = "PUT";
-            }
-            const response = await fetch(url, {
-                method: method,
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
-            const data = await response.json();
-            console.log("Success:", data);
-            setFormData({
-                id: "",
-                employeeName: "",
-                email: "",
-                mobileNumber: "",
-                dob: "",
-                gender: "",
-                country: "",
-            });
-            setShowModal(false);
-            setSelectedEmployeeId(null);
-            fetchData();
-        } catch (error) {
-            console.error("Error:", error);
-        } finally {
-            setShowModal(false);
-        }
-    };
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormData((prevState) => ({
+    //         ...prevState,
+    //         [name]: value,
+    //     }));
+    // };
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         let url =
+    //             "https://crudcrud.com/api/3b6744664e6148eb8655f85ad9942e0f/posts";
+    //         let method = "POST";
+    //         if (selectedEmployeeId) {
+    //             url += `/${selectedEmployeeId}`;
+    //             method = "PUT";
+    //         }
+    //         const response = await fetch(url, {
+    //             method: method,
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify(formData),
+    //         });
+    //         const data = await response.json();
+    //         console.log("Success:", data);
+    //         setFormData({
+    //             id: "",
+    //             employeeName: "",
+    //             email: "",
+    //             mobileNumber: "",
+    //             dob: "",
+    //             gender: "",
+    //             country: "",
+    //         });
+    //         setShowModal(false);
+    //         setSelectedEmployeeId(null);
+    //         fetchData();
+    //     } catch (error) {
+    //         console.error("Error:", error);
+    //     } finally {
+    //         setShowModal(false);
+    //     }
+    // };
 
     return (
         <div className="app">
@@ -86,7 +86,8 @@ function EarlyAccess() {
             {showModal && (
                 <div className="modal">
                     <div className="modal-content">
-                        <form onSubmit={handleSubmit}>
+                        {/* <form onSubmit={handleSubmit}> */}
+                        <form >
                             <span className="close-btn" onClick={() => setShowModal(false)}>
                                 <FaTimes />
                             </span>
@@ -97,7 +98,7 @@ function EarlyAccess() {
                                 type="text"
                                 name="employeeName"
                                 value={formData.employeeName}
-                                onChange={handleChange}
+                                // onChange={handleChange}
                                 placeholder="Enter Employee Name"
                                 required
                             />
@@ -107,7 +108,7 @@ function EarlyAccess() {
                                 type="email"
                                 name="email"
                                 value={formData.email}
-                                onChange={handleChange}
+                                // onChange={handleChange}
                                 placeholder="Enter Email Address"
                                 required
                             />
@@ -117,7 +118,7 @@ function EarlyAccess() {
                                 type="tel"
                                 name="mobileNumber"
                                 value={formData.mobileNumber}
-                                onChange={handleChange}
+                                // onChange={handleChange}
                                 placeholder="Enter Mobile Number"
                                 required
                             />
@@ -125,7 +126,7 @@ function EarlyAccess() {
                             <select
                                 name="gender"
                                 value={formData.gender}
-                                onChange={handleChange}
+                                // onChange={handleChange}
                                 required
                             >
                                 <option value="">Select Gender</option>
@@ -138,7 +139,7 @@ function EarlyAccess() {
                             <select
                                 name="country"
                                 value={formData.country}
-                                onChange={handleChange}
+                                // onChange={handleChange}
                                 required
                             >
                                 <option value="">Select Country</option>
