@@ -36,8 +36,8 @@ footer {
 
 footer p {
   margin-top: .7rem;
+  font-size: 14px;
 }
-
 
 .main_container {
   display: flex;
@@ -115,6 +115,10 @@ footer p {
   .sub_container_one_left {
     padding-left: 7%;
   }
+    footer p {
+      margin-top: .9rem;
+      font-size: 12px;
+    }
 }
 
 @media (max-width: 950px) {
@@ -160,6 +164,7 @@ footer p {
     margin-left: 1.22rem;
     margin-right: 1rem;
   }
+
 }
 
 @media (max-width: 450px) {
